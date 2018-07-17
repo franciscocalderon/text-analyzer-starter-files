@@ -29,7 +29,6 @@ var analyzeHandler = function(){
 		var wordMap = countWords(words);
 		$(".text-report").removeClass('hidden');
 		$(".js-total-words").text(words.length);
-		console.log(words);
 		$(".js-unique-words").text(Object.keys(wordMap).length);
 		$(".js-word-length").text((getCharCount(wordMap)/words.length).toFixed(2));
 		console.log(getCharCount(wordMap));
