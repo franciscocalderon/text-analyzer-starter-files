@@ -1,6 +1,6 @@
 // your code here!
 var getTokens = function(fullText){
-	return fullText.toLowerCase().split(/[ ,!.";:-]+/).filter(Boolean).sort();
+	return fullText.toLowerCase().split(/[\n ,!.";:-]+/).filter(Boolean).sort();
 }
 
 var countWords = function(tokens){
@@ -29,8 +29,10 @@ var analyzeHandler = function(){
 		var wordMap = countWords(words);
 		$(".text-report").removeClass('hidden');
 		$(".js-total-words").text(words.length);
+		console.log(words);
 		$(".js-unique-words").text(Object.keys(wordMap).length);
-		$(".js-word-length").text(getCharCount(wordMap)/words.length);
+		$(".js-word-length").text((getCharCount(wordMap)/words.length).toFixed(2));
+		console.log(getCharCount(wordMap));
 	});
 }
 
